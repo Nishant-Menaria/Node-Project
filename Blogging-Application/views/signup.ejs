@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging-Application</title>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+
+    <div class="container">
+        <form action="/user/signup" method="post">
+            <div class="mb-3 mt-4">
+                <label for="fullName" class="form-label">full Name</label>
+                <input type="text" class="form-control" name="fullName" id="fullName" aria-describedby="fullName">
+              </div>
+            <div class="mb-3 mt-4">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+
+    <%- include('./partials/script') %>
+</body>
+</html>

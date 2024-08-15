@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogging-Application</title>
+    <style>
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./partials/navbar') %>
+    <div class="container mt-3">
+        <% blogs.forEach(blog => { %>
+            <div class="card" style="width: 18rem;">
+                <img src="<%=blog.coverImage%>" class="card-img-top" alt="..." height="65%">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.title %></h5>
+                </div>
+                <center><a href="/blog/<%=blog._id%>" class="btn btn-primary mb-2" style="width: 80%;">View</a></center>
+              </div>
+        <% }) %>
+    </div>
+    <%- include('./partials/script') %>
+</body>
+</html>
